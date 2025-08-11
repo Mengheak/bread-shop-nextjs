@@ -1,6 +1,6 @@
 import ProductGrid from "@/components/products/product-grid";
 import MainHeros from "@/components/sections/main-hero";
-import { dummy_breads, home_dummy_breads } from "@/data/dummy-bread";
+import {  home_dummy_breads } from "@/data/dummy-bread";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
