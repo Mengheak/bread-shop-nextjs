@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import bread1 from "../../assets/bread1.jpg";
 import bread2 from "../../assets/bread2.jpg";
 import bread3 from "../../assets/bread3.jpg";
@@ -9,7 +10,7 @@ export type TBread = {
   id: number;
   name: string;
   description: string;
-  image: any;
+  image: string | StaticImageData; 
   price: number;
   qty: number;
   variations: {
