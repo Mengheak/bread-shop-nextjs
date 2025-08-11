@@ -4,12 +4,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { dummy_breads } from "@/data/dummy-bread";
 
-export default function ProductDetailsPage({
+type Params = Promise<{ productId: string }>;
+
+export default async function ProductDetailsPage({
   params,
 }: {
-  params: { productId: string };
+  params: Params;
 }) {
-  const product = dummy_breads.find((p) => String(p.id) === params.productId);
+  const { productId } = await params;
+  const product = dummy_breads.find((p) => String(p.id) === productId);
   if (!product) return notFound();
 
   const related = dummy_breads
@@ -42,7 +45,6 @@ export default function ProductDetailsPage({
             className="object-cover"
             priority
           />
-          {/* soft glows */}
           <div className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-[#d9a066] opacity-10 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-[#8b4513] opacity-10 blur-3xl" />
         </div>
