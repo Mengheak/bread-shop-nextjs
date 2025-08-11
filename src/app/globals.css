@@ -24,3 +24,28 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.svg-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+.text-color {
+  color: #f5e6d3;
+}
+.bg-gradient {
+  background: linear-gradient(135deg, #d9a066 0%, #8b4513 100%);
+}
+.text-gradient {
+  background: linear-gradient(135deg, #d9a066 0%, #8b4513 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
