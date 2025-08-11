@@ -21,7 +21,7 @@ export default function RootLayout({
         <ReduxProvider>
           <MainHeaderBackground />
           <MainHeader />
-          {children}
+          <div className="min-h-screen">{children}</div>
           <MainFooter />
         </ReduxProvider>
       </body>
