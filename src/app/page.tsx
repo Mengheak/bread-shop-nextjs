@@ -1,4 +1,3 @@
-import MainFooter from "@/components/main-footer";
 import ProductGrid from "@/components/products/product-grid";
 import DiscountSection from "@/components/sections/discount-section";
 import MainHeros from "@/components/sections/main-hero";

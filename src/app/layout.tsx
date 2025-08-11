@@ -3,6 +3,7 @@ import "./globals.css";
 import MainHeaderBackground from "@/components/main-header-background";
 import MainHeader from "@/components/main-header";
 import MainFooter from "@/components/main-footer";
+import ReduxProvider from "@/redux/redux-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <MainHeaderBackground />
-        <MainHeader />
-        {children}
-        <MainFooter />
+        <ReduxProvider>
+          <MainHeaderBackground />
+          <MainHeader />
+          {children}
+          <MainFooter />
+        </ReduxProvider>
       </body>
     </html>
   );
