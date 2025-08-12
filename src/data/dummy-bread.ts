@@ -10,7 +10,7 @@ export type TBread = {
   id: number;
   name: string;
   description: string;
-  image: string | StaticImageData; 
+  image: string | StaticImageData;
   price: number;
   qty: number;
   variations: {
@@ -18,7 +18,9 @@ export type TBread = {
     weight: string;
     extraToppings?: string[];
   }[];
-  category: string;
+  category: string; 
+  categoryId: string; 
+  subcategoryId?: string; 
   rating: number;
   isAvailable: boolean;
   tags: string[];
@@ -38,6 +40,8 @@ export const dummy_breads: TBread[] = [
       { size: "Large", weight: "400g" },
     ],
     category: "Baguette",
+    categoryId: "bread",
+    subcategoryId: "baguette",
     rating: 4.8,
     isAvailable: true,
     tags: ["french", "crispy", "fresh"],
@@ -56,6 +60,8 @@ export const dummy_breads: TBread[] = [
       { size: "Large", weight: "1kg" },
     ],
     category: "Loaf",
+    categoryId: "bread",
+    subcategoryId: "loaf",
     rating: 4.6,
     isAvailable: true,
     tags: ["healthy", "fiber", "brown bread"],
@@ -73,6 +79,8 @@ export const dummy_breads: TBread[] = [
       { size: "Large Round", weight: "1kg" },
     ],
     category: "Artisan",
+    categoryId: "bread",
+    subcategoryId: "sourdough",
     rating: 4.9,
     isAvailable: true,
     tags: ["artisan", "sourdough", "fermented"],
@@ -90,6 +98,8 @@ export const dummy_breads: TBread[] = [
       { size: "Regular", weight: "300g" },
     ],
     category: "Sweet Bread",
+    categoryId: "coffee",
+    subcategoryId: "cold-brew",
     rating: 4.7,
     isAvailable: true,
     tags: ["sweet", "chocolate", "soft"],
@@ -107,6 +117,8 @@ export const dummy_breads: TBread[] = [
       { size: "Family Size", weight: "800g" },
     ],
     category: "Flatbread",
+    categoryId: "coffee",
+    subcategoryId: "latte",
     rating: 4.5,
     isAvailable: true,
     tags: ["garlic", "herb", "olive oil"],
@@ -124,6 +136,8 @@ export const dummy_breads: TBread[] = [
       { size: "Large", weight: "500g" },
     ],
     category: "Healthy",
+    categoryId: "bread",
+    subcategoryId: "multigrain",
     rating: 4.8,
     isAvailable: true,
     tags: ["multigrain", "seeds", "crunchy"],

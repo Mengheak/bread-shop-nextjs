@@ -21,7 +21,6 @@ export default function MainHeader() {
   return (
     <header className="px-6 md:px-[10%] py-4">
       <nav className="flex items-center justify-between">
-        {/* Left: Logo + Brand */}
         <div className="flex items-center gap-4">
           <div className="size-12 md:size-16 rounded-full bg-amber-500 shadow-md shadow-amber-900/30" />
           <span className="font-bold text-lg md:text-xl uppercase tracking-wider text-[#f5e6d3]">
@@ -29,7 +28,6 @@ export default function MainHeader() {
           </span>
         </div>
 
-        {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-4 lg:gap-6">
           {NavMenu.map((na) => {
             const isActive = pathname === na.link;
@@ -65,7 +63,6 @@ export default function MainHeader() {
               )}
             </Link>
 
-            {/* Cart */}
             <Link
               href="/cart"
               aria-label="Cart"
@@ -123,7 +120,6 @@ export default function MainHeader() {
             )}
           </Link>
 
-          {/* Cart */}
           <Link
             href="/cart"
             aria-label="Cart"
@@ -137,7 +133,6 @@ export default function MainHeader() {
             )}
           </Link>
 
-          {/* Profile avatar */}
           <Link
             href="/account"
             className="w-9 h-9 md:w-10 md:h-10 rounded-full overflow-hidden ring-1 ring-white/10 hover:ring-white/25 transition-all duration-200 hover:scale-105"
@@ -175,7 +170,6 @@ export default function MainHeader() {
   );
 }
 
-/* ---------------- Icons ---------------- */
 function CartIcon({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">

@@ -1,3 +1,4 @@
+import CategoryOptions from "@/components/categories/category-options";
 import ProductGrid from "@/components/products/product-grid";
 import DiscountSection from "@/components/sections/discount-section";
 import MainHeros from "@/components/sections/main-hero";
@@ -17,6 +18,7 @@ export default function Home() {
       <MainHeros />
       <div className="h-20" />
       <DiscountSection />
+      <CategoryOptions />
       <span className="flex itce justify-between">
         <h2 className="text-2xl text-gradient font-extrabold flex uppercase items-center gap-4">
           <FaCoffee size={34} className="text-color" />
