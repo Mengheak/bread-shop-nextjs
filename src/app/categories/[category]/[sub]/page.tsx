@@ -12,11 +12,11 @@ import ProductGrid from "@/components/products/product-grid";
 type Params = Promise<{ category: string; sub: string }>;
 
 export async function generateMetadata({ params }: { params: Params }) {
-  const { sub, category } = await params;
+  const { category, sub } = await params;
   if (sub) {
     const cat = selectCategoryBySlug(category);
     const subs = selectSubcategoryBySlugs(category, sub);
-    if (!cat || !sub) return {};
+    if (!cat || !subs) return {};
     return { title: `${subs?.name} • ${cat.name} | BreadShop` };
   } else {
     const cat = selectCategoryBySlug(category);
