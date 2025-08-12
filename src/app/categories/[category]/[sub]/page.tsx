@@ -11,8 +11,8 @@ import ProductGrid from "@/components/products/product-grid";
 
 type Params = Promise<{ category: string; sub: string }>;
 
-export async function generateMetadata({ params }: { params: Params }) {
-  const { category, sub } = await params;
+export async function generateMetadata({ params }: {params: {category: string; sub: string} }) {
+  const { category, sub } = params;
   if (sub) {
     const cat = selectCategoryBySlug(category);
     const subs = selectSubcategoryBySlugs(category, sub);
