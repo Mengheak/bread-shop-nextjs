@@ -9,7 +9,6 @@ import {
 } from "../../../../redux/store/catalogSelectors";
 import ProductGrid from "@/components/products/product-grid";
 
-type Params = Promise<{ category: string; sub: string }>;
 
 export async function generateMetadata({ params }: {params: {category: string; sub: string} }) {
   const { category, sub } = params;
