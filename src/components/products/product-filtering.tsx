@@ -20,7 +20,7 @@ export default function ProductFiltering({
 }) {
   const [focused, setFocused] = useState<boolean>(false);
   const dispatch = useAppDispatch();
-  const { query, selectedCategories, sort } = useAppSelector(
+  const { query, selectedCategories } = useAppSelector(
     (state) => state.productFilter
   );
   return (

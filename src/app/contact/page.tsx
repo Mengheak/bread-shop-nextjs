@@ -16,7 +16,7 @@ export default function ContactPage() {
   });
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type, checked } = e.target as any;
+    const { name, value, type, checked } = e.target as HTMLInputElement;
     setForm((f) => ({ ...f, [name]: type === "checkbox" ? checked : value }));
   };
 

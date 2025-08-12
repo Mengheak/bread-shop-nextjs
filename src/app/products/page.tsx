@@ -1,6 +1,6 @@
 "use client";
 import ProductGrid from "@/components/products/product-grid";
-import { dummy_breads, TBread } from "@/data/dummy-bread";
+import { dummy_breads } from "@/data/dummy-bread";
 import Fuse from "fuse.js";
 import ProductBanner from "@/components/products/product-banner";
 import ProductFiltering from "@/components/products/product-filtering";
