@@ -83,7 +83,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
 
       <section className="mt-8">
         <h2 className="text-xl font-bold text-[#f5e6d3] mb-3">
-          All {cat.name}
+          All {cat.name} related
         </h2>
         <ProductGrid products={products} />
       </section>
