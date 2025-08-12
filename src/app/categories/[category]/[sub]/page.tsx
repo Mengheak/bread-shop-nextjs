@@ -9,20 +9,21 @@ import {
 } from "../../../../redux/store/catalogSelectors";
 import ProductGrid from "@/components/products/product-grid";
 
+type Params = Promise<{ category: string; sub: string }>;
 
-export async function generateMetadata({ params }: { params: { category: string; sub?: string } }) {
-  if (params.sub) {
-    const cat = selectCategoryBySlug(params.category);
-    const sub = selectSubcategoryBySlugs(params.category, params.sub);
+export async function generateMetadata({ params }: { params: Params }) {
+  const { sub, category } = await params;
+  if (sub) {
+    const cat = selectCategoryBySlug(category);
+    const subs = selectSubcategoryBySlugs(category, sub);
     if (!cat || !sub) return {};
-    return { title: `${sub.name} • ${cat.name} | BreadShop` };
+    return { title: `${subs?.name} • ${cat.name} | BreadShop` };
   } else {
-    const cat = selectCategoryBySlug(params.category);
+    const cat = selectCategoryBySlug(category);
     if (!cat) return {};
     return { title: `${cat.name} | BreadShop` };
   }
 }
-
 
 export async function generateStaticParams() {
   return CATEGORIES.flatMap((c) =>
